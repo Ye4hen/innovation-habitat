@@ -1,0 +1,44 @@
+.register {
+
+	&__container {
+	}
+
+	&__form {
+		display: grid;
+		justify-content: center;
+		text-align: center;
+		justify-items: center;
+		@include adaptiveValue("row-gap", 20, 10);
+	}
+
+	&__title {
+		&:not(:last-child){
+			@include adaptiveValue('margin-bottom', 20, 10);
+		}
+	}
+
+	&__item {
+	}
+
+	&__button {
+		margin: 0 auto;
+	}
+
+	&__proposition {
+		display: grid;
+		justify-content: start;
+		justify-items: start;
+		@include adaptiveValue("row-gap", 15, 10);
+	}
+}
+
+.proposition-register {
+
+	&__top{}
+
+	&__middle {
+		text-transform: uppercase;
+	}
+
+	&__bottom {}
+}

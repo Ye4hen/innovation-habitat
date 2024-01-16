@@ -1,0 +1,25 @@
+.support {
+
+	&__container {}
+
+	&__title {
+		@include adaptiveValue("margin-bottom", 30, 20);
+	}
+
+	&__list {
+		display: grid;
+		@include adaptiveValue("row-gap", 20, 10);
+	}
+
+	&__item {
+		a{
+			color: $btnBg;
+			transition: color 0.4s;
+			@media(any-hover:hover){
+				&:hover{
+					color: $secondaryBg;
+				}
+			}
+		}
+	}
+}

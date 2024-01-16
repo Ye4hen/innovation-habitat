@@ -1,0 +1,91 @@
+// colors
+$mainColor: #fff;
+$secondaryColor: #001F3F;
+// #001F5F
+$thirdColor:#001F5F;
+$btnTxt:#333333;
+$btnBg:#FFD500;
+
+$bgColor: #4DB6AC;
+$secondaryBg:#167168;
+
+// fonts
+$fontFamily: 'Roboto', sans-serif;
+$secondaryFontFamily: 'Lato', sans-serif;
+$fontSize: 1rem;
+
+$minWidth: 320;
+// Ширина полотна (макету)
+$maxWidth: 1920;
+// Ширина обмежуючого контейнера (0 = немає обмеження)
+$maxWidthContainer: 1170;
+// Загальний відступ у контейнера
+// (30 = по 15px ліворуч і праворуч, 0 = немає відступу)
+$containerPadding: 30;
+
+// Ширина спрацьовування першого брейкпоінту
+$containerWidth: $maxWidthContainer + $containerPadding;
+
+// Брейк-поїнти
+$pc: em($containerWidth);
+$tablet: em(991.98);
+$mobile: em(767.98);
+$mobileSmall: em(479.98);
+
+$responsiveType: 1;
+
+@if ($responsiveType==1) {
+
+	// Чуйна
+	[class*="__container"] {
+		@if ($maxWidthContainer>0) {
+			max-width: toRem($containerWidth);
+			margin: 0 auto;
+		}
+
+		@if ($containerPadding>0) {
+			@if ($maxWidthContainer>0) {
+				padding: 0 toRem(math.div($containerPadding, 2));
+			}
+
+			@else {
+				@include adaptiveValue("padding-left", math.div($containerPadding, 2), 15);
+				@include adaptiveValue("padding-right", math.div($containerPadding, 2), 15);
+			}
+		}
+	}
+}
+
+@else {
+
+	// Брейк-поїнтами
+	[class*="__container"] {
+		margin: 0 auto;
+
+		@if ($maxWidthContainer>0) {
+			max-width: toRem($containerWidth);
+		}
+
+		@else {
+			@if ($containerPadding>0) {
+				padding: 0 toRem(math.div($containerPadding, 2));
+			}
+		}
+
+		@media (max-width: $pc) {
+			max-width: toRem(970);
+		}
+
+		@media (max-width: $tablet) {
+			max-width: toRem(750);
+		}
+
+		@media (max-width: $mobile) {
+			max-width: none;
+
+			@if ($containerPadding>0 and $maxWidthContainer>0) {
+				padding: 0 toRem(math.div($containerPadding, 2));
+			}
+		}
+	}
+}

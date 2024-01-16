@@ -1,0 +1,103 @@
+.footer {
+	@include adaptiveValue("padding-top", 70, 35);
+	@include adaptiveValue("padding-bottom", 40, 30);
+	background-color: $btnTxt;
+	&__container {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		@include adaptiveValue("gap", 70, 30);
+		@media (max-width:$mobile){
+			flex-wrap: wrap;
+			text-align: center;
+			justify-content: center;
+		}
+	}
+
+	&__main {
+		display: grid;
+		@include adaptiveValue("gap", 30, 20);
+	}
+
+	&__nav {}
+}
+
+.main-footer {
+
+	&__logo {
+		img{
+			max-width: toRem(200);
+			border-radius: 50%;	
+		}
+	}
+
+	&__quote {
+		@include adaptiveValue("font-size", 20, 18);
+		font-family: $secondaryFontFamily;
+		font-weight: 700;
+	}
+
+	&__socials {
+		display: flex;
+		align-items: center;
+		@include adaptiveValue("column-gap", 40, 20);
+		row-gap: toRem(15);
+		@media (max-width:$mobile){
+			flex-wrap: wrap;
+			text-align: center;
+			justify-content: center;
+		}
+	}
+
+	&__social {
+		svg{
+			height: toRem(25);
+			width: toRem(25);
+			path{
+				transition: fill 0.3s;
+			}
+		}
+		@media(any-hover:hover){
+			&:hover{
+				svg{
+					path{
+						fill:$btnBg;
+					}
+				}
+			}
+		}
+	}
+}
+
+.nav-footer {
+
+	&__item {}
+
+	&__title{
+		text-align: left;
+		color: $mainColor;
+		@include adaptiveValue("margin-bottom", 30, 15);
+		@media (min-width:$mobile){
+			white-space: nowrap;
+		}
+	}
+
+	&__list {
+		display: grid;
+		@include adaptiveValue("row-gap", 20, 10);
+	
+		&-item{
+			@include adaptiveValue("font-size", 20, 16);
+		}
+	}
+
+
+	&__link{
+		transition: color 0.3s;
+		@media(any-hover:hover){
+			&:hover{
+				color: $btnBg;
+			}
+		}
+	}
+}

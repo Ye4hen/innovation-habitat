@@ -1,0 +1,96 @@
+.profile {
+
+	&__top {
+		display: grid;
+		@include adaptiveValue("gap", 30, 20);
+		&:not(:last-child){
+			@include adaptiveValue('margin-bottom', 50, 30);
+		}
+	}
+
+	&__sub-title {
+		@include adaptiveValue("font-size", 32, 20);
+	}
+
+	&__edit {
+		display: grid;
+		justify-content: center;
+		@include adaptiveValue("gap", 50, 30);
+		&:not(:last-child){
+		@include adaptiveValue('margin-bottom', 50, 30);
+		}
+	}
+}
+
+.edit-profile {
+
+	&__main {
+		display: grid;
+		justify-content: center;
+	}
+
+	&__actions {
+		display: flex;
+		align-items: center;
+		@include adaptiveValue("gap", 30, 15);
+	}
+
+	&__email {
+		display: grid;
+		@include adaptiveValue("gap", 20, 10);
+		span{
+			@include adaptiveValue("font-size", 24, 18);
+			span{
+				color: $btnBg;
+				font-family: $secondaryFontFamily;
+			}
+		}
+		button{
+			transition: all 0.3s;
+			svg{
+				transition: transform 0.3s;
+			}
+			@media(any-hover:hover){
+				&:hover{
+					color: $btnBg;
+					svg{
+						transform: translateX(toRem(5));
+					}
+				}
+			}
+		}
+	}
+}
+
+.balance-profile {
+
+	&__top {
+		display: grid;
+		justify-content: center;
+		text-align: center;
+		&:not(:last-child){
+		@include adaptiveValue('margin-bottom', 30, 20);
+		}
+		@include adaptiveValue("gap", 20, 10);
+	}
+
+	&__main {
+		display: grid;
+		justify-content: center;
+		@include adaptiveValue("gap", 20, 15);
+	}
+}
+
+.logout-profile {
+	display: grid;
+	justify-content: center;
+	gap:toRem(15);
+	&:not(:last-child){
+		@include adaptiveValue('margin-bottom', 50, 30);
+	}
+}
+
+.products-profile {
+	display: grid;
+	@include adaptiveValue("row-gap", 30, 20);
+}

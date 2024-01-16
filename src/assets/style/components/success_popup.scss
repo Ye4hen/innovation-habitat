@@ -1,0 +1,28 @@
+.header-popup {
+
+}
+
+.success-popup {
+	position: fixed;
+	top: toRem(150);
+	right: toRem(50);
+	background-color: #fff;
+	border-radius: toRem(18);
+	opacity: 0;
+	transition: opacity 0.5s;
+	z-index: 500;
+	.success-popup-active &{
+		opacity: 1;
+	}
+	
+	&__content {
+		width: 100%;
+		height: 100%;
+		padding: toRem(20);
+	}
+	
+	&__message {
+		text-align: center;
+		color: $bgColor;
+	}
+}

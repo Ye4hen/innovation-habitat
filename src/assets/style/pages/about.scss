@@ -1,0 +1,164 @@
+.our-story {
+
+	&__container {
+		display: flex;
+		align-items: center;
+		@include adaptiveValue("column-gap", 70, 30);
+		row-gap: toRem(30);
+		@media (max-width:$tablet){
+			flex-direction: column;
+		}
+	}
+
+	&__content {
+		flex : 1 1 50%;
+	}
+
+	&__title {
+		@media (min-width:$tablet){
+			text-align: left;
+		}
+	}
+
+	&__text {
+		@media (max-width:$tablet){
+			text-align: center;
+		}
+	}
+
+	&__image {
+		flex: 1 1 50%;
+		img{
+			max-width: 100%;
+			border-radius: toRem(25);
+		}
+		@media (max-width:$tablet){
+			img{
+				max-width: toRem(500);
+			}
+		}
+		@media(max-width:em(530)){
+			img{
+				max-width: 100%;
+			}
+		}
+	}
+}
+
+/*===========================================================================================*/
+
+.innovation {
+	background-color: $secondaryBg;
+	a{
+		@media (max-width:$tablet){
+			margin: 0 auto;
+		}
+	}
+	&__container {
+		display: flex;
+		flex-direction: row-reverse;
+		align-items: center;
+		@include adaptiveValue("column-gap", 70, 30);
+		row-gap: toRem(30);
+		@media (max-width:$tablet){
+			flex-direction: column;
+		}
+	}
+
+	&__content {
+		flex: 1 1 50%;
+	}
+
+	&__title {
+		@media (min-width:$tablet){
+			text-align: left;
+		}
+	}
+
+	&__text {
+		@media (max-width:$tablet){
+			text-align: center;
+		}
+	}
+
+	&__image {
+		flex:1 1 50%;
+		img{
+			max-width: 100%;
+			border-radius: toRem(15);
+		}
+		@media (max-width:$tablet){
+			img{
+				max-width: toRem(500);
+			}
+		}
+		@media(max-width:em(530)){
+			img{
+				max-width: 100%;
+			}
+		}
+	}
+}
+
+/*===========================================================================================*/
+
+.achievements {
+	background-color: #203a37;
+	a{
+		@media (max-width:$tablet){
+			margin: 0 auto;
+		}
+	}
+	&__container {
+		display: flex;
+		align-items: center;
+		@include adaptiveValue("column-gap", 70, 30);
+		row-gap: toRem(30);
+		@media (max-width:$tablet){
+			flex-direction: column;
+		}
+	}
+
+	&__content {
+		flex : 1 1 50%;
+	}
+
+	&__title {
+		color: $bgColor;
+		@media (min-width:$tablet){
+			text-align: left;
+		}
+	}
+
+	&__text {
+		@media (max-width:$tablet){
+			text-align: center;
+		}
+	}
+
+	&__image {
+		flex: 1 1 50%;
+		img{
+			max-width: 100%;
+			border-radius: toRem(45);
+		}
+		@media (max-width:$tablet){
+			img{
+				max-width: toRem(500);
+			}
+		}
+		@media(max-width:em(530)){
+			img{
+				max-width: 100%;
+			}
+		}
+	}
+}
+
+/*===========================================================================================*/
+
+.about__button{
+	@media (max-width:$tablet){
+		margin: 0 auto;
+	}
+}

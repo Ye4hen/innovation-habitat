@@ -1,0 +1,222 @@
+
+body.shipping-popup-active {
+	overflow: hidden;
+}
+
+.popup {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100vh;
+	background-color: rgba(0, 0, 0, 0.9);
+	z-index: 9999;
+	transition: 0.3s;
+	transform: scale(0.2);
+	opacity: 0;
+	overflow: auto;
+	visibility: hidden;
+	transition: all 0.5s;
+}
+
+.popup-shipping{
+	.shipping-popup-active &{
+		transform: scale(1);
+		opacity: 1;
+		visibility: visible;
+	}
+}
+
+.header-popup {
+	&__wrapper {
+		display: flex;
+		padding: toRem(15);
+		flex-direction: column;
+		align-items: center;
+		min-height: 100%;
+		flex: 1 1 auto;
+		width: 100%;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+
+	&__content {
+		position: relative;
+		width: 100%;
+		z-index: 9999;
+	}
+
+	&__close {
+		position: absolute;
+		top: toRem(20);
+		right: toRem(10);
+		display: block;
+		width: toRem(30);
+		height: toRem(18);
+		z-index: 3;
+
+		&::before,
+		&::after {
+			content: "";
+			transition: all 0.3s ease 0s;
+			right: 0;
+			position: absolute;
+			width: 100%;
+			height: toRem(2);
+			background-color: $mainColor;
+		}
+
+		&::before {
+			top: calc(50% - toRem(1));
+			transform: rotate(-45deg);
+		}
+
+		&::after {
+			bottom: calc(50% - toRem(1));
+			transform: rotate(45deg);
+		}
+
+		@media(any-hover:hover){
+			&:hover{
+				&::before,
+				&::after{
+					background-color: $btnBg;
+				}
+			}
+		}
+	}
+
+	&__text {}
+}
+
+.header-popup-body {
+	position: absolute;
+	top: toRem(180);
+	right: toRem(30);
+	height: toRem(400);
+	border-radius: toRem(24);
+	background-color: $btnTxt;
+	padding-top: toRem(50);
+	@include adaptiveValue("padding-bottom", 30, 15);
+	@include adaptiveValue("padding-right", 15, 5);
+	@include adaptiveValue("padding-left", 15, 5);
+	display: grid;
+	gap: toRem(30);
+	opacity: 0;
+	visibility: hidden;
+	transition: opacity 0.3s;
+	z-index: 1000;
+	@media (max-width:$tablet){
+		top: toRem(100);
+		right: toRem(20);
+	}
+	@media (max-width:$mobile){
+		left: toRem(20);
+	}
+	.popup-active & {
+		opacity: 1;
+		visibility: visible;
+	}
+	&__list {
+		display: grid;
+		overflow: auto;
+		@include adaptiveValue("gap", 30, 15);
+	}
+
+	&__item {
+		padding: toRem(0) toRem(15);
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		@include adaptiveValue("gap", 20, 10);
+		@media (min-width:$mobile){
+			max-width: toRem(600);
+		}
+	}
+
+	&__no-product{
+		width: toRem(200);
+		height: 100%;
+	}
+}
+
+.header-popup-item {
+	@media (max-width:$mobileSmall){
+		display: grid;
+	}
+	&__info {
+		display: grid;
+		@include adaptiveValue("gap", 15, 5);
+		flex: 1 1 40%;
+	}
+
+	&__name {
+		font-family: $secondaryFontFamily;
+		@include adaptiveValue("font-size", 26, 20);
+	}
+
+	&__name-link {
+		@media(any-hover:hover) {
+			&:hover {
+				text-decoration: underline;
+			}
+		}
+	}
+
+	&__category {
+		color: $btnBg;
+		@include adaptiveValue("font-size", 16, 14);
+	}
+
+	&__delete{
+
+		&-btn{
+			svg{
+				path{
+					transition: fill 0.3s;
+				}
+			}
+			@media (max-width:$mobile){
+				svg{
+					width: toRem(30);
+					height: toRem(30);
+				} 
+			}
+			@media(any-hover:hover){
+				&:hover{
+					svg{
+						path{
+							fill:$btnBg;
+						}
+					}
+				}
+			}
+		}
+	}
+
+	&__image {
+		overflow: hidden;
+		border-radius: toRem(12);
+		background-color: $mainColor;
+		flex: 1 1 40%;
+
+		img {
+			border-radius: toRem(12);
+			max-width: 100%;
+			transition: transform 0.3s;
+
+			@media(any-hover:hover) {
+				&:hover {
+					transform: scale(1.05);
+				}
+			}
+		}
+		@media (max-width:$mobileSmall){
+			max-width: toRem(250);
+			img{
+				max-width: toRem(250);
+			}	
+		}
+	}
+}

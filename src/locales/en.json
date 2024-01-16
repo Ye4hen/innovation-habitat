@@ -1,0 +1,135 @@
+{
+	"buttons": {
+		"edit": "Edit",
+		"create": "Create",
+		"add": "Add",
+		"save": "Save",
+		"cancel": "Cancel",
+		"delete": "Delete",
+		"login": "Login",
+		"register": "Register",
+		"logout": "Logout",
+		"explore": "Explore the shop",
+		"buy": "Buy",
+		"replenish": "Replenish"
+	},
+	"menu": {
+		"home": "Home",
+		"about": "About",
+		"shop": "Shop",
+		"registration": "Registration",
+		"users": "Users",
+		"support": "Support"
+	},
+	"filters": {
+		"filterName": "Name",
+		"filterCategories": "Categories",
+		"filterPriceFrom": "From",
+		"filterPriceTo": "To",
+		"filterError": "There are no such products"
+	},
+	"titles": {
+		"advantagesTitle": "Our Advantages",
+		"similarProducts": "Similar Products",
+		"footerNavTitle": "Website Navigation",
+		"registerTitle": "Join Us",
+		"loginTitle": "Welcome Back",
+		"supportTitle": "Support",
+		"noSimilarProductsTitle": "There are no similar products, yet(",
+		"errorTitle": "Some error",
+		"errorSubTitle": "Reload the page and go to the Support page and contact me through my Telegram"
+	},
+	"homePage": {
+		"mainBlock": {
+			"title": "Transforming Homes with Sustainable Technology",
+			"text": "Welcome to Innovation Habitat – redefining living with sustainable tech. Explore our smart home devices and  that prioritize efficiency and eco-friendliness. Join us in creating smarter, greener homes for a better tomorrow."
+		},
+		"bestProducts": {
+			"title": "Discover Our Top Picks",
+			"text": "Explore our carefully curated selection of best-selling and highly-rated products. Find the perfect solution tailored to meet your needs and preferences."
+		}
+	},
+	"aboutPage": {
+		"ourStory": {
+			"title": "Our Story",
+			"text1": "«Our Story» is the narrative that defines us. It all began with a vision to revolutionize the way we interact with our homes. Rooted in a deep passion for sustainability and technology, our journey started with a clear goal: to redefine living spaces, making them smarter, more efficient, and ecologically responsible.",
+			"text2": "From humble beginnings to groundbreaking innovations, every step of our story has been guided by a commitment to creating a positive impact. We've worked tirelessly, merging cutting-edge technology with a dedication to environmental consciousness.",
+			"text3": "Our path has been marked by innovation, collaboration, and a relentless pursuit of excellence. Along the way, we've collaborated with visionary minds, fostered a culture of creativity, and nurtured a team driven by the belief that a sustainable future begins at home.",
+			"text4": "Today, we stand as a testament to the power of combining technology and sustainability. Our story continues to unfold, fueled by a mission to transform homes worldwide into smarter, greener, and more connected environments for generations to come."
+		},
+		"innovationTechnology": {
+			"title": "Innovation in Technology",
+			"text1": "«Innovation in Technology» defines our core. We are driven by an unyielding commitment to harnessing the latest advancements to enhance the way we live in our homes. Our pursuit is not just about integrating technology; it's about reimagining the very essence of modern living.",
+			"text2": "Embracing the most cutting-edge solutions, we strive to make homes intelligent, responsive, and eco-conscious. Through our curated selection of smart home devices and IoT solutions, we bring forth a synergy of convenience, efficiency, and sustainability.",
+			"text3": "Our ethos revolves around making these technological marvels accessible to all. We believe in democratizing innovation, ensuring that everyone can experience the transformative power of technology in their daily lives."
+		},
+		"achievements": {
+			"title": "Achievements and Milestones",
+			"text1": "Over the years, our journey has been defined by remarkable milestones and notable achievements. Each milestone represents a testament to our dedication, innovation, and unwavering commitment to pioneering excellence in the smart home technology sphere.",
+			"text2": "From our humble beginnings, we've aimed for the stars. Our milestones stand as markers of progress, illustrating our growth, evolution, and impactful contributions to the smart home industry. We've celebrated breakthrough product launches, garnered recognition for innovation, and most importantly, earned the trust and loyalty of our valued customers."
+		}
+	},
+	"LoginPage": {
+		"textPropositionLogin": "Already have an account? Click ->",
+		"textPropositionRegister": "Don't have an account? Click ->",
+		"Email": "Email",
+		"Password": "Password"
+	},
+	"ProfilePage": {
+		"greeting": "Hello",
+		"title": "Here you can see your profile",
+		"boughtProductsTitle": "Thank you for your purchases! Here is what you have already bought:"
+	},
+	"CartPage": {
+		"title": "This is your Cart!",
+		"noProductTitle": "Your cart is empty, yet"
+	},
+	"EditorPage": {
+		"titleUA": "Titlte in Ukrainian",
+		"titleEN": "Titlte in English",
+		"descUA": "Description in Ukrainian",
+		"descEN": "Description in English",
+		"price": "Price",
+		"img": "Image",
+		"email": "Email",
+		"password": "Password",
+		"category": "Category",
+		"addCategory": "Want to add the category?",
+		"balance": "Balance",
+		"isAdmin": "Admin Status",
+		"isBest": "Best Product Status"
+	},
+	"UsersPage": {
+		"title": "Here you can see all your users"
+	},
+	"SupportPage": {
+		"item1": "If you have any bugs - reload the page or go to another page)",
+		"itemTelegram": "Or write on this"
+	},
+	"balancePopup": {
+		"shippingTitle": "Please provide us with information below to replenish the balance",
+		"cardExpDateEnter": "Enter your card expiry date",
+		"cardNumberEnter": "Enter your card number",
+		"fullNameEnter": "Enter your full name",
+		"citySelectChoose": "Choose the city where you want the products to be delivered"
+	},
+	"errors": {
+		"balanceError": "You need to enter the number",
+		"email": "Email is invalid",
+		"password": "Password must be longer than 6 symbols",
+		"allFields": "Fill all fields",
+		"noSuchUsers": "There are no such users. Check the info which you've entered or Sign Up",
+		"userAlreadyExists": "User with such credentials already exists",
+		"successfullyBought": "Order placed!",
+		"emptyFavoriteList": "Your favorite list is empty, yet"
+	},
+	"otherText": {
+		"footerQuote": "Empowering homes with smart solutions for a greener tomorrow.",
+		"yourEmail": "Your email",
+		"changeGAcc": "Change Google account",
+		"replenishBalance": "Here you can replenish your balance",
+		"wantLogout": "Want to logout?",
+		"or": "or",
+		"googleLogin": " Login with Google"
+	}
+}

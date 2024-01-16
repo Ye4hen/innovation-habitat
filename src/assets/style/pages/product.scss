@@ -1,0 +1,117 @@
+.product {
+
+	&__container {}
+
+	&__main {
+		display: flex;
+		flex-direction: row-reverse;
+		align-items: center;
+		justify-content: space-between;
+		@include adaptiveValue("gap", 50, 20);
+		@media (max-width:$mobile){
+			flex-direction: column-reverse;
+		}
+	}
+
+	&__info {
+		flex:1 1 50%;
+	}
+	
+	&__image {
+		flex:1 1 50%;
+		img{
+			max-width: 100%;
+			@media (max-width:$mobile){
+				max-width: toRem(500);
+			}
+			@media (max-width:em(530)){
+				max-width: 100%;
+			}
+		}
+	}
+
+}
+
+.info-product {
+	display: flex;
+	flex-direction: column;
+	@include adaptiveValue("gap", 30, 15);
+	@media (max-width:$mobile){
+		align-items: center;
+		text-align: center;
+	}
+
+	&__title {
+		@media (min-width:$mobile){
+			text-align: left;
+		}
+		color: $mainColor;
+	}
+
+	&__price {
+		@include adaptiveValue("font-size", 35, 25);
+	}
+
+	&__actions {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		@include adaptiveValue("column-gap", 20, 10);
+		row-gap: toRem(15);
+		svg{
+			height: toRem(25);
+			width: toRem(25);
+			path{
+				transition: fill 0.3s;
+			}
+			@media(any-hover:hover){
+				&:hover{
+					path{
+						fill: $btnBg;
+					}
+				}
+			}
+		}
+		@media (max-width:$mobileSmall){
+			flex-direction: column;
+		}
+	}
+
+	&__amount {
+		display: flex;
+		align-items: center;
+		@include adaptiveValue("gap", 15, 5);
+		input{
+			width: 100%;
+		}
+		&:not(:last-child){
+			margin-bottom: toRem(0);
+		}
+		button{
+			font-size: toRem(20);
+			padding: toRem(5) toRem(10);
+		}
+	}
+
+	&__action-center {
+		display: flex;
+		gap:toRem(15);
+	}
+
+	&__action {}
+
+	&__button {}
+
+	&__desc {}
+}
+
+.similar-products{
+	display: flex;
+	flex-direction: column;
+	@include adaptiveValue("gap", 40, 20);
+	&__small-title{
+		@include adaptiveValue("font-size", 28, 24);
+		color: $secondaryColor;
+		text-align: center;
+	}
+}

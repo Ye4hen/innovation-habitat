@@ -1,0 +1,391 @@
+.title {
+	@include adaptiveValue("font-size", 48, 34);
+}
+
+.small-title {
+	@include adaptiveValue("font-size", 32, 28);
+}
+.title,
+.small-title {
+	color: $secondaryColor;
+	font-family: $secondaryFontFamily;
+	text-align: center;
+	font-weight: 700;
+	text-transform: capitalize;
+	line-height: 1.2;
+}
+
+.text{
+	line-height: 1.5;
+}
+
+p{
+	&:not(:last-child){
+		@include adaptiveValue('margin-bottom', 15, 10);
+	}
+}
+
+/*===========================================================================================*/
+
+button {
+	&:disabled {
+		opacity: 0.6;
+		cursor: default;
+	}
+}
+
+.button {
+	padding: toRem(10) toRem(20);
+	color: $btnTxt;
+	background-color: $btnBg;
+	border-radius: toRem(6);
+	transition: all 0.3s;
+
+	&:disabled {
+		@media(any-hover:hover) {
+			&:hover {
+				cursor: default;
+			}
+		}
+	}
+
+	@media(any-hover:hover) {
+		&:hover {
+			background-color: $btnTxt;
+			color: $btnBg;
+		}
+	}
+
+	&--transparent {
+		background-color: transparent;
+		color: $secondaryColor;
+
+		@media(any-hover:hover) {
+			&:hover {
+				border: 0.0625rem solid $mainColor;
+				color: $mainColor;
+			}
+		}
+	}
+}
+
+.dollar{
+	color: $btnBg
+}
+
+.err-msg {
+	@include adaptiveValue("font-size", 20, 16);
+	color: $secondaryBg;
+	margin-top: toRem(10);
+}
+
+.scs-msg {
+	@include adaptiveValue("font-size", 20, 16);
+	color: $secondaryColor;
+	margin-top: toRem(10);
+}
+
+.item-form {
+	position: relative;
+
+	.see-pass-btn {
+		position: absolute;
+		top: 60%;
+		right: 5%;
+
+		svg {
+			path {
+				fill: $secondaryColor;
+				transition: fill 0.3s;
+			}
+		}
+
+		@media(any-hover:hover) {
+			&:hover {
+				svg {
+					path {
+						fill: $mainColor;
+					}
+				}
+			}
+		}
+	}
+
+	label {
+		display: grid;
+		@include adaptiveValue("gap", 10, 5);
+		text-align: left;
+		font-size: toRem(18);
+	}
+
+	input,
+	select,
+	textarea {
+		padding: toRem(5) toRem(10);
+		@include adaptiveValue("width", 300, 250);
+		background-color: transparent;
+		border: 0.0625rem solid $thirdColor;
+		color: $mainColor;
+		border-radius: toRem(12);
+		font-size: toRem(16);
+	}
+
+	select {
+		appearance: auto;
+		min-height: toRem(30);
+		color: $btnTxt;
+	}
+
+	textarea {
+		padding: toRem(10) toRem(15);
+	}
+
+	&:not(:last-child) {
+		@include adaptiveValue('margin-bottom', 20, 10);
+	}
+}
+
+/*===========================================================================================*/
+
+.body-loading {
+	opacity: 0;
+	transition: opacity 0.3s;
+}
+
+
+.has-error {
+	margin-top: toRem(300);
+	text-align: center;
+	display: flex;
+	flex-direction:column;
+	align-items: center;
+	justify-content: center;
+	min-height: 100vh;
+}
+
+/*===========================================================================================*/
+
+.selected-lang{
+	background-color: $btnTxt !important;
+	color: $btnBg !important;
+}
+
+.main{
+	@include adaptiveValue("padding-top", 130, 110);
+}
+
+.section {
+	@include adaptiveValue("padding-top", 70, 30);
+	@include adaptiveValue("padding-bottom", 30, 15);
+}
+
+.block-header {
+	display: grid;
+	@include adaptiveValue("gap", 30, 15);
+	&__title {
+		
+	}
+
+	&__text {}
+
+	&__button {
+		margin-right: auto;
+		&--fw{}
+	}
+}
+
+/*===========================================================================================*/
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+	-webkit-appearance: none;
+	margin: 0;
+}
+
+input[type="number"] {
+	-moz-appearance: textfield;
+	/* Підтримка для Firefox */
+}
+
+input[type='checkbox'] {
+	/* Hide the default checkbox */
+	appearance: none;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	/* Use custom checkbox styles */
+	width: 1rem;
+	height: 1rem;
+	border: 0.0625rem solid #ffffff;
+	border-radius: 3px;
+	display: inline-block;
+	position: relative;
+	vertical-align: middle;
+	cursor: pointer;
+	margin-right: 5px;
+}
+
+input[type='checkbox']:checked::before {
+	content: '\2713';
+	font-size: 12px;
+	position: absolute;
+	top: -1px;
+	left: 3px;
+	color: #fff;
+}
+
+/*===========================================================================================*/
+
+.products__list{
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	align-items: start;
+	@include adaptiveValue("gap", 40, 20);
+	@media (max-width:$tablet){
+		grid-template-columns: repeat(3, 1fr);
+	}
+	@media (max-width:$mobile){
+		grid-template-columns: repeat(2, 1fr);
+	}
+	@media (max-width:$mobileSmall){
+		grid-template-columns: auto;
+	}
+}
+
+.item-product {
+
+	position: relative;
+	z-index: 3;
+	display: flex;
+	flex-direction: column-reverse;
+	background-color: $mainColor;
+	align-self: start;
+	border-radius: toRem(24);
+	height: 100%;
+	&:hover{
+		.item-best-product__image{
+			&::before{
+				content:'';
+				opacity: 1;
+			}
+		}
+		.item-best-product__actions{
+			opacity: 1;
+			visibility: visible;
+			pointer-events: all;
+		}
+	}
+	&__info {
+		flex: 1 1 50%;
+		padding: toRem(20);
+		display: grid;
+	}
+	
+	&__title {
+		color: $secondaryColor;
+		font-size: toRem(22);
+		font-family: $secondaryFontFamily;
+		cursor: pointer;
+		&:not(:last-child){
+			margin-bottom: toRem(20);
+		}
+		@media(any-hover:hover){
+			&:hover{
+				text-decoration: underline;
+			}
+		}
+	}
+
+	&__price {
+		color: $btnBg;
+		@include adaptiveValue("font-size", 22, 18);
+		font-weight: 700;
+	}
+
+	&__actions{
+		position: absolute;
+		top: 38%;
+		left: 43%;
+		display: grid;
+		gap:toRem(15);
+		opacity: 0;
+		visibility: hidden;
+		pointer-events: none;
+		transition: opacity 0.3s;
+	}
+
+	&__action{
+		padding: toRem(5);
+		border-radius: toRem(6);
+		cursor: pointer;
+		transition: background-color 0.3s;
+		svg{
+			height: toRem(25);
+			width: toRem(25);
+		}
+		path{
+			fill:$btnBg;
+		}
+		@media(any-hover:hover){
+			&:hover{
+				background-color: $mainColor;
+			}
+		}
+	}
+
+	&__image {
+		position: relative;
+		border-radius: toRem(24) toRem(24) 0 0;
+		z-index: 2;
+		flex:1 1 50%;
+		max-width: 100%;
+		background-color: $mainColor;
+		@include adaptiveValue("margin-bottom", 30, 20);
+		img{
+			border-radius: toRem(24) toRem(24) 0 0;
+			max-width: 100%;
+		}
+		&::before{
+			content:'';
+			position: absolute;
+			width: 100%;
+			height: 100%;
+			top: 0;
+			left: 0;
+			opacity: 0;
+			border-radius: toRem(24) toRem(24) 0 0;
+			background-color: rgb(0, 0, 0, 0.5);
+			transition: opacity 0.3s;
+		}
+	}
+
+	&__edit-items{
+		display: flex;
+		flex-direction: column;
+		gap:toRem(15);
+		padding: toRem(0) toRem(15) toRem(20) toRem(15);
+	}
+
+	&__edit-item{
+		width: 100%;
+		button{
+			width: 100%;
+		}
+	}
+}
+
+.icon-active {
+	background-color: $btnBg;
+	path {
+		fill: $mainColor;
+	}
+
+	@media(any-hover:hover) {
+		&:hover {
+			background-color: $btnBg;
+
+			path {
+				fill: $mainColor !important;
+			}
+		}
+	}
+}
